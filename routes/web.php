@@ -15,5 +15,13 @@
 //     return view('welcome');
 // });
 
-Route::get('/index', 'FrontController@index');
-//                    某控制器名稱內的函式名稱
+Route::get('/', 'FrontController@index'); //首頁
+//               某控制器名稱內的函式名稱
+
+Route::get('/news', 'FrontController@news'); //新聞頁
+Route::get('/news_info', 'FrontController@news_info'); //新聞內頁
+Route::get('/contact_us', 'FrontController@contact_us'); //聯絡我們
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
